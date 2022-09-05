@@ -11,11 +11,13 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
     "@tailwindcss/line-clamp": "^0.4.0",
+    "@types/react-modal": "^3.13.1",
     "axios": "^0.27.2",
     "daisyui": "^2.24.0",
     "next-themes": "^0.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-modal": "^3.15.1",
     "react-query": "^3.34.19",
     "react-redux": "^7.2.6",
     "react-spring-bottom-sheet": "^3.4.1",
