@@ -78,15 +78,14 @@ const SearchPage = () => {
           leftNode={<SearchIcon />}
         />
       </div>
-      {isSearchCenterListLoading ? (
-        <Loading />
-      ) : isSearchCenterListError ? (
+      {isSearchCenterListLoading && <Loading />}
+      {isSearchCenterListError && (
         <ErrorContent error={searchCenterListError} />
-      ) : searchCenterList !== undefined &&
-        searchCenterList.pages.length !== 0 ? (
+      )}
+      {searchCenterList !== undefined && searchCenterList.pages.length !== 0 && (
         <div className="flex flex-col ml-5 mt-5">
           <span className="mb-3">암장</span>
-          <div className="flex 'mb-footer overflow-auto scrollbar-hide'">
+          <div className="flex 'mb-footer overflow-auto gap-2 scrollbar-hide'">
             {searchCenterList.pages.map((page) => {
               return page.results.map((value, index) => (
                 <CenterResult
@@ -105,7 +104,7 @@ const SearchPage = () => {
             )}
           </div>
         </div>
-      ) : null}
+      )}
       {searchCenterList !== undefined &&
       searchCenterList.pages[0].results.length !== 0 &&
       searchUserList !== undefined &&
@@ -117,7 +116,7 @@ const SearchPage = () => {
       ) : isSearchUserListError ? (
         <ErrorContent error={searchUserError} />
       ) : searchUserList !== undefined && searchUserList.pages.length !== 0 ? (
-        <div className="flex flex-col ml-2 mt-5">
+        <div className="flex flex-col ml-5 mt-5">
           <span className="mb-3">라온</span>
           <div className="flex mb-footer overflow-auto scrollbar-hide">
             {searchUserList.pages.map((page) => {
