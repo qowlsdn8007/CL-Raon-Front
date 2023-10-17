@@ -40,5 +40,9 @@ jobs:
       - name: web unit-test
         run: yarn workspace climbingweb test
 
-      - name: build test
+      - name: lighthouseci install
+        run: yarn global add @lhci/cli@0.12.x
+      - name: web build
         run: yarn workspace climbingweb build
+      - name: lighthouse check
+        run: lhci autorun
